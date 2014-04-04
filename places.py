@@ -75,7 +75,7 @@ class PlacesAPI(Resource):
 			places.append(place)
 		
 		jsonResponse = {'status' : True, 'minified' : minified, 'limit':limit, 'sort':sort, 'result': {'places' : places,'count':rawQueryResult.count()}}
-		return jsonResponse, 200, {'Access-Control-Allow-Origin' : 'http://localhost'}
+		return jsonResponse, 200, {'Access-Control-Allow-Origin' : '*'}
 
 	def post(self):			
 		args = parser.parse_args()
@@ -191,7 +191,7 @@ class PlaceAPI(Resource):
 
 		jsonResult = {'status':True, 'result': {'place' : queryResult}}
 		
-		return jsonResult
+		return jsonResult,200,{'Access-Control-Allow-Origin' : '*'}
 
 	def delete(self, place_id):
 		db['places'].remove({'_id':ObjectId(place_id)})

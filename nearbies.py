@@ -33,7 +33,7 @@ class NearbyPlacesAPI(Resource):
 		limit = args['limit']		
 		skip = args['skip']
 
-		radius = radius if radius else 100000
+		radius = radius if radius else 30000
 		sort = sort if sort else 'distance'
 		order = order if order else 1
 		limit = limit if limit else 20

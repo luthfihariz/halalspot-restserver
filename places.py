@@ -4,7 +4,7 @@ from bson.objectid import ObjectId
 from pymongo import Connection
 from datetime import datetime
 from dbconfig import db
-
+#new comment
 places_api = Blueprint('places_api',__name__)
 
 parser = reqparse.RequestParser()
